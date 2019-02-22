@@ -4,7 +4,7 @@ import { Customer } from '../customer';
 
 
 @Component({
-  selector: 'app-customer-details',
+  selector: 'customer-details',
   templateUrl: './customer-details.component.html',
   styleUrls: ['./customer-details.component.css']
 })

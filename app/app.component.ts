@@ -8,23 +8,24 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 })
 export class AppComponent {
   
-  title = 'my first angular app';
+  title = 'Sample Customer Crud App';
+  description = 'Angular-SpringBoot';
 
   constructor(private formBuilder : FormBuilder) {
-    this.createForm();
+    // this.createForm();
   }
 
-  exampleForm = new FormGroup({    
-    firstName : new FormControl(),
-    lastName : new FormControl(),
-  });
+  // exampleForm = new FormGroup({    
+  //   firstName : new FormControl(),
+  //   lastName : new FormControl(),
+  // });
 
-  createForm(): any {
+  // createForm(): any {
     // throw new Error("Method not implemented.");
-    this.exampleForm = this.formBuilder.group({
-      firstName: '',
-      lastName: '',
-    });
-  }
+    // this.exampleForm = this.formBuilder.group({
+    //   firstName: '',
+    //   lastName: '',
+    // });
+  // }
 
 }

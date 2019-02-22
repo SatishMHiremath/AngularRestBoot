@@ -1,15 +1,28 @@
+import { CustomerService } from './../customer.service';
 import { Component, OnInit } from '@angular/core';
+import { Customer } from '../Customer';
 
 @Component({
-  selector: 'app-search-customer',
+  selector: 'search-customer',
   templateUrl: './search-customer.component.html',
   styleUrls: ['./search-customer.component.css']
 })
 export class SearchCustomerComponent implements OnInit {
 
-  constructor() { }
+  age: number;
+  customers: Customer[];
+
+  constructor(private customerService : CustomerService) { }
 
   ngOnInit() {
+    this.age=0;
+  }
+  
+  searchCustomers() {
+    this.customerService.getCustomerByAge(this.age).subscribe(customers => this.customers = customers);
   }
 
+  onSubmit() {
+    this.searchCustomers();  
+  }
 }

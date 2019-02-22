@@ -13,7 +13,8 @@ export class CustomerService {
   }
 
   getCustomer(id: number): Observable<Object> {
-    return this.http.get(this.baseUrl+'/'+'{id}');
+    // return this.http.get(this.baseUrl+'/'+'{id}');
+    return this.http.get("./assets/mydata.json");
   }
 
   createCustomer(customer: Object): Observable<Object> {
@@ -28,8 +29,13 @@ export class CustomerService {
     return this.http.delete(this.baseUrl+'/'+'{id}',{responseType:'text'});
   }
 
+  custItems: any;
+
   getCustomerList(): Observable<any> {
-    return this.http.get(this.baseUrl);
+    // return this.http.get(this.baseUrl);
+         this.custItems = this.http.get("./assets/mydata.json").subscribe(data => console.log(data));
+         console.log(this.custItems)
+         return this.custItems;
   }
 
   getCustomerByAge(age:number): Observable<any> {
